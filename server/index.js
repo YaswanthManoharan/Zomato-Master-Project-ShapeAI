@@ -6,6 +6,8 @@ const zomato = express();
 //application middlewares
 zomato.use(helmet());
 zomato.use(cors());
+zomato.use(express.json());
+zomato.use(express.urlencoded({extended:false}));
 
 zomato.get("/",(req,res)=>res.json({message:"Setup success"}));
 
