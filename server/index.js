@@ -5,8 +5,10 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import mongoose from "mongoose";
+import passport from "passport";
 //microservice routes
-
+//configs
+import googleAuthConfig from "./config/google.config";
 import Auth from "./API/Auth";
 
 //database connection
@@ -17,6 +19,11 @@ zomato.use(helmet());
 zomato.use(cors());
 zomato.use(express.json());
 zomato.use(express.urlencoded({extended:false}));
+zomato.use(passport.initialize());
+zomato.use(passport.session());
+
+//passport configuration
+googleAuthConfig(passport);
 
 //App routes
 

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const RestaurantSchema=new mongoose.Schem({
+const RestaurantSchema=new mongoose.Schema({
     name :{type:String,required:true},
     city :{type:String,required:true},
     address :{type:String,required:true},
